@@ -1,35 +1,49 @@
-# Fraud-Detection-in-Financial-Transactions
+# Credit Card Fraud Detection
 https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
 
-## Problem Statement
+This project focuses on developing a credit card fraud detection system using machine learning techniques. The goal is to accurately identify fraudulent credit card transactions to prevent customers from being charged for unauthorized purchases.
 
-A clear statement of the problem you're trying to solve or question you're trying to answer.
+## Table of Contents
 
-## Goals
+- [Overview](#overview)
+- [Dataset](#dataset)
+- [Project Steps](#project-steps)
+- [Results](#results)
+- [Dependencies](#dependencies)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-List of goals you want to achieve through this project.
+## Overview
 
-## Data
+In the banking industry, detecting fraudulent credit card transactions is of utmost importance to protect customers and financial institutions. This project addresses this issue by implementing machine learning models to classify transactions as either fraudulent or legitimate. The focus is on achieving high accuracy while considering precision and recall.
 
-Information about the data used in the project, including the source and format of the data, how it was obtained, and any cleaning or preprocessing steps you performed.
+## Dataset
 
-## Methods
+The dataset used for this project contains credit card transactions made by European cardholders in September 2013. It consists of numerical features resulting from a Principal Component Analysis (PCA) transformation, ensuring confidentiality. Key features include 'Time' (elapsed seconds since the first transaction), 'Amount' (transaction amount), and 'Class' (fraud or legitimate). The dataset is highly unbalanced, with fraudulent transactions accounting for only 0.172% of all transactions.
 
-Explanation of the methods used in the project, including any algorithms or models used, any libraries or packages used, and any data visualization techniques used.
+## Project Steps
+
+The project follows these steps:
+
+1. Data Preprocessing: Handle missing values, scale numerical features, and encode categorical variables.
+2. Exploratory Data Analysis: Understand the distribution of features, identify patterns, and explore correlations.
+3. Model Selection: Choose appropriate classification models for fraud detection, such as Logistic Regression, Decision Tree, Random Forest, K-Nearest Neighbors, and Support Vector Classifier (SVC).
+4. Class Imbalance Handling: Implement undersampling techniques like Random Undersampling, Tomek Links, NearMiss, Cluster Centroids, and Condensed Nearest Neighbour to address class imbalance.
+5. Model Training and Evaluation: Train the selected models on the undersampled data and evaluate their performance using metrics like accuracy and Area Under the Precision-Recall Curve (AUPRC).
+6. Model Comparison: Compare the results of different models and undersampling techniques to identify the most effective combination.
 
 ## Results
 
-Summary of the findings or results of the project, including any visualizations or statistics used to illustrate the results.
+The best performing model for this project is the Support Vector Classifier (SVC) when combined with the Condensed Nearest Neighbour undersampling technique. This combination achieved an AUPRC score of 0.975000, indicating its effectiveness in accurately identifying fraudulent transactions while considering precision and recall.
 
-## Conclusion
+## Dependencies
 
-Final thoughts on the project, including any insights gained, limitations or challenges encountered, and suggestions for future work.
+The following dependencies are required to run the project:
 
-## Acknowledgments
-
-Optional section to thank anyone who contributed to the project, such as collaborators, mentors, or sources of data or code.
-
-## References
-
-Optional section to list any references used in the project, such as academic papers, online resources, or other projects that influenced your work.
-
+- Python (version 3.10.11)
+- pandas (version 1.5.3)
+- scikit-learn (version 1.2.2)
+- numpy (version 1.22.4)
+- matplotlib (version 3.7.1)
+- imblearn (version 0.10.11)
